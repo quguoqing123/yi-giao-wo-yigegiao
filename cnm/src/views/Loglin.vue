@@ -72,7 +72,7 @@ export default {
                 });
               } else if (res.data.code == 1) {
                 sessionStorage.setItem("login_token", res.data.token);
-                this.$router.push("main");
+                this.$router.push("home");//登录成功后跳转到后台权限页面
               }
             })
             .catch(() => {

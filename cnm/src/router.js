@@ -3,6 +3,8 @@ import Router from "vue-router";
 import Login from "./views/Loglin.vue";
 import zsgc from "./views/zsgc.vue";
 import home from "./views/Home.vue";
+import userlist from "./components/user.vue";
+import hy from "./components/hy.vue";
 
 Vue.use(Router);
 
@@ -20,8 +22,22 @@ export default new Router({
     },
     {
       path: "/home",
-      name: "home",
-      component: home
+      component: home,
+      children: [
+        {
+          path: "",
+          component: home,
+          redirect: "welcome"
+        },
+        {
+          path: "welcome",
+          component: hy
+        },
+        {
+          path: "userlist",
+          component: userlist
+        }
+      ]
     },
     {
       path: "/about",

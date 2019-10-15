@@ -1,5 +1,5 @@
 <template>
-  <Layout class="home layout" style="heigth:" >
+  <Layout class="home layout" style="heigth:100hv">
     <Header>
       <Menu mode="horizontal" theme="dark" active-name="1">
         <div class="layout-logo">后台权限管理</div>
@@ -31,46 +31,34 @@
               <Icon type="ios-navigate"></Icon>
               权限管理
             </template>
-
             <MenuItem name="1-1">泽鹏的权限管理</MenuItem>
             <MenuItem name="1-2">天林的权限管理</MenuItem>
-            <MenuItem name="1-3">国庆的权限管理</MenuItem>
+            <MenuItem name="1-3" to="/home/userlist">国庆的权限管理</MenuItem>
           </Submenu>
-          <!-- <Submenu name="2">
-              <template slot="title">
-                <Icon type="ios-keypad"></Icon>
-                Item 2
-              </template>
-              <MenuItem name="2-1">Option 1</MenuItem>
-              <MenuItem name="2-2">Option 2</MenuItem>
-            </Submenu>
-            <Submenu name="3">
-              <template slot="title">
-                <Icon type="ios-analytics"></Icon>
-                Item 3
-              </template>
-              <MenuItem name="3-1">Option 1</MenuItem>
-              <MenuItem name="3-2">Option 2</MenuItem>
-            </Submenu> -->
         </Menu>
       </Sider>
       <Layout :style="{ padding: '0 24px 24px' }">
         <Content
           :style="{ padding: '24px', minHeight: '280px', background: '#fff' }"
         >
-          <div id="app">
-            <div id="nav"></div>
-
-            <router-view />
-          </div>
+        <router-view />
+        <!-- <hy></hy> -->
+        <!-- <userlist></userlist> -->
         </Content>
       </Layout>
     </Layout>
   </Layout>
 </template>
 <script>
+import userlist from "../components/user"
+import hy from "../components/hy"
 export default {
-  name: "home"
+  name: "home",
+  components: {//注册组件
+    hy,
+    userlist
+  } 
+  
 };
 </script>
 

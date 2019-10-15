@@ -24,5 +24,9 @@ export default {
   loginOut() {
     //退出登录时调用，销毁掉请求拦截器
     axios.interceptors.request.eject(axiosIns);
+  },
+  getdata(params) {
+    // console.log(params);
+    return axios.get("http://localhost:8888/per/user", { params });
   }
 };
